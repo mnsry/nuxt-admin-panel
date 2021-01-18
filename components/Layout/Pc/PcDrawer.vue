@@ -62,7 +62,7 @@
       <v-col>
         <v-list subheader>
           <v-list-group append-icon="" no-action>
-            <template v-slot:activator>
+            <template #activator>
               <v-list-item-avatar class="mr-n2">
                 <v-img
                   :lazy-src="require('@/assets/images/error/404.png')"
@@ -103,7 +103,7 @@
             :append-icon="sidebar.append_icon"
             no-action
           >
-            <template v-slot:activator>
+            <template #activator>
               <v-list-item-title v-text="sidebar.title" />
             </template>
 
@@ -126,14 +126,14 @@
 
 <script>
 export default {
-  async fetch() {
-    await this.$store.dispatch('sidebar/getApiSidebars')
-  },
   data() {
     return {
       drawer: false,
       load: false,
     }
+  },
+  async fetch() {
+    await this.$store.dispatch('sidebar/getApiSidebars')
   },
   computed: {
     welcome() {
@@ -162,6 +162,6 @@ export default {
       }
     },
   },
-  fetchOnServer: false
+  fetchOnServer: false,
 }
 </script>

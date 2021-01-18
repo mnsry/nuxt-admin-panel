@@ -55,6 +55,9 @@ export default {
   async fetch() {
     await this.$store.dispatch('product/getProduct', this.$route.params.id)
   },
+  head: {
+    titleTemplate: '%s | محصول: نمایش اطلاعات',
+  },
   computed: {
     mobile() {
       return this.$vuetify.breakpoint.smAndDown
@@ -63,9 +66,6 @@ export default {
   mounted() {
     this.$store.commit('navbar/updateNav', 'محصولات | نمایش اطلاعات محصول')
   },
-  head: {
-    titleTemplate: '%s | محصول: نمایش اطلاعات',
-  },
-  fetchOnServer: false
+  fetchOnServer: false,
 }
 </script>

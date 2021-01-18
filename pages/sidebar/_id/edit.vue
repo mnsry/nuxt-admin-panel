@@ -55,6 +55,9 @@ export default {
   async fetch() {
     await this.$store.dispatch('sidebar/getApiSidebar', this.$route.params.id)
   },
+  head: {
+    titleTemplate: '%s | منو: ویرایش اطلاعات',
+  },
   computed: {
     mobile() {
       return this.$vuetify.breakpoint.smAndDown
@@ -63,9 +66,6 @@ export default {
   mounted() {
     this.$store.commit('navbar/updateNav', 'آیتم های منو | ویرایش کردن منو ')
   },
-  head: {
-    titleTemplate: '%s | منو: ویرایش اطلاعات',
-  },
-  fetchOnServer: false
+  fetchOnServer: false,
 }
 </script>

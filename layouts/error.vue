@@ -68,17 +68,17 @@ export default {
       otherError: 'خطایی روی داده!',
     }
   },
-  methods: {
-    reload() {
-      location.reload()
-    },
-  },
   head() {
     const title =
       this.error.statusCode === 404 ? this.pageNotFound : this.otherError
     return {
       title,
     }
+  },
+  methods: {
+    reload() {
+      location.reload()
+    },
   },
 }
 </script>

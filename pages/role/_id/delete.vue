@@ -55,6 +55,9 @@ export default {
   async fetch() {
     await this.$store.dispatch('role/getRole', this.$route.params.id)
   },
+  head: {
+    titleTemplate: '%s | نقش: حذف کردن نقش',
+  },
   computed: {
     mobile() {
       return this.$vuetify.breakpoint.smAndDown
@@ -63,9 +66,6 @@ export default {
   mounted() {
     this.$store.commit('navbar/updateNav', 'نقش ها | حذف کردن نقش')
   },
-  head: {
-    titleTemplate: '%s | نقش: حذف کردن نقش',
-  },
-  fetchOnServer: false
+  fetchOnServer: false,
 }
 </script>

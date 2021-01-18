@@ -55,6 +55,9 @@ export default {
   async fetch() {
     await this.$store.dispatch('product/getProduct', this.$route.params.id)
   },
+  head: {
+    titleTemplate: '%s | محصول: حذف کردن محصول',
+  },
   computed: {
     mobile() {
       return this.$vuetify.breakpoint.smAndDown
@@ -63,9 +66,6 @@ export default {
   mounted() {
     this.$store.commit('navbar/updateNav', 'محصولات | حذف کردن محصول')
   },
-  head: {
-    titleTemplate: '%s | محصول: حذف کردن محصول',
-  },
-  fetchOnServer: false
+  fetchOnServer: false,
 }
 </script>
