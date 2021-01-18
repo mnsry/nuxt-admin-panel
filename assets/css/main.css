@@ -1,0 +1,58 @@
+@font-face {
+  font-family: English;
+  src: url("~assets/fonts/en-caption.otf") format("opentype");
+}
+
+@font-face {
+  font-family: Persion;
+  src: url("~assets/fonts/fa-caption.otf") format("opentype");
+}
+
+.en-font {
+  font-family: 'English', serif;
+}
+
+.fa-font {
+  font-family: 'Persion', serif;
+}
+
+.app_center {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 80vh;
+  display: flex;
+}
+
+#bg-pic {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: 'Persion', serif;
+}
+
+.v-navigation-drawer__content::-webkit-scrollbar {
+  width: 0;
+}
+.v-data-table__wrapper::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #e6e6e6;
+  border-left: 1px solid #dadada;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #b0b0b0;
+  border: solid 1px #e6e6e6;
+  border-radius: 7px;
+}
