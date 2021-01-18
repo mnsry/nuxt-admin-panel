@@ -48,7 +48,7 @@
               <template #activator>
                 <v-list-item-avatar class="mr-n2">
                   <v-img
-                    :lazy-src="require('@/assets/images/logo/google.png')"
+                    :lazy-src="require('@/assets/images/logo/mansory.png')"
                     :src="profile.avatar"
                     :alt="profile.name"
                   />

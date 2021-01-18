@@ -12,12 +12,11 @@
 
 <script>
 export default {
-  mounted() {
-    this.$axios.$get('/api/test')
-    this.$store.commit('navbar/updateNav', 'داشبورد')
-  },
   head: {
     titleTemplate: '%s | خوش آمدید',
+  },
+  mounted() {
+    this.$store.commit('navbar/updateNav', 'داشبورد')
   },
 }
 </script>

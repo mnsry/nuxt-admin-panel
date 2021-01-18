@@ -17,36 +17,36 @@
           height="100px"
           dense
         >
-          <template v-slot:default>
-            <thead class="justify-content">
-              <tr>
-                <th></th>
-                <th>نام</th>
-                <th>فامیل</th>
-                <th>آواتار</th>
-                <th>تلفن همراه</th>
-                <th>ایمیل</th>
-                <th>نقش</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td></td>
-                <td>{{ profile.name }}</td>
-                <td>{{ profile.family }}</td>
-                <td><v-img :src="profile.avatar" width="50" /></td>
-                <td>{{ profile.mobile }}</td>
-                <td>{{ profile.email }}</td>
-                <td>
-                  <div
-                    v-for="(role, j) of profile.roles"
-                    :key="j"
-                    v-text="role.display_name"
-                  />
-                </td>
-              </tr>
-            </tbody>
-          </template>
+          <!--          <template #default>-->
+          <!--            <thead class="justify-content">-->
+          <!--              <tr>-->
+          <!--                <th></th>-->
+          <!--                <th>نام</th>-->
+          <!--                <th>فامیل</th>-->
+          <!--                <th>آواتار</th>-->
+          <!--                <th>تلفن همراه</th>-->
+          <!--                <th>ایمیل</th>-->
+          <!--                <th>نقش</th>-->
+          <!--              </tr>-->
+          <!--            </thead>-->
+          <!--            <tbody>-->
+          <!--              <tr>-->
+          <!--                <td></td>-->
+          <!--                <td>{{ profile.name }}</td>-->
+          <!--                <td>{{ profile.family }}</td>-->
+          <!--                <td><v-img :src="profile.avatar" width="50" /></td>-->
+          <!--                <td>{{ profile.mobile }}</td>-->
+          <!--                <td>{{ profile.email }}</td>-->
+          <!--                <td>-->
+          <!--                  <div-->
+          <!--                    v-for="(role, j) of profile.roles"-->
+          <!--                    :key="j"-->
+          <!--                    v-text="role.display_name"-->
+          <!--                  />-->
+          <!--                </td>-->
+          <!--              </tr>-->
+          <!--            </tbody>-->
+          <!--          </template>-->
         </v-simple-table>
       </v-col>
     </v-row>
@@ -61,96 +61,96 @@
           :items="sidebars"
           sort-by="id"
         >
-          <template v-slot:top>
-            <v-row justify="center" dense>
-              <v-col cols="2">
-                <v-btn outlined rounded block text>
-                  <v-icon color="success" left>mdi-plus</v-icon>
-                  <span class="green--text">افزودن جدید</span>
-                </v-btn>
-              </v-col>
+          <!--          <template v-slot:top>-->
+          <!--            <v-row justify="center" dense>-->
+          <!--              <v-col cols="2">-->
+          <!--                <v-btn outlined rounded block text>-->
+          <!--                  <v-icon color="success" left>mdi-plus</v-icon>-->
+          <!--                  <span class="green&#45;&#45;text">افزودن جدید</span>-->
+          <!--                </v-btn>-->
+          <!--              </v-col>-->
 
-              <v-col cols="9">
-                <v-text-field
-                  v-model="search"
-                  prepend-inner-icon="mdi-magnify"
-                  placeholder="جستجو ..."
-                  prefix=" "
-                  clearable
-                  rounded
-                  outlined
-                  dense
-                  flat
-                ></v-text-field>
-              </v-col>
+          <!--              <v-col cols="9">-->
+          <!--                <v-text-field-->
+          <!--                  v-model="search"-->
+          <!--                  prepend-inner-icon="mdi-magnify"-->
+          <!--                  placeholder="جستجو ..."-->
+          <!--                  prefix=" "-->
+          <!--                  clearable-->
+          <!--                  rounded-->
+          <!--                  outlined-->
+          <!--                  dense-->
+          <!--                  flat-->
+          <!--                ></v-text-field>-->
+          <!--              </v-col>-->
 
-              <v-col cols="12">
-                <v-select
-                  v-model="selectedHeaders"
-                  :items="headers"
-                  prepend-inner-icon="mdi-table"
-                  messages="ستون هایی را که میخواهید نمایش دهید انتخاب کنید."
-                  deletable-chips
-                  return-object
-                  hide-selected
-                  outlined
-                  multiple
-                  rounded
-                  chips
-                  dense
-                  flat
-                >
-                  <template v-slot:no-data>
-                    <div class="my-1 mr-3">همه موارد انتخاب شدن</div>
-                  </template>
-                </v-select>
-              </v-col>
-            </v-row>
-          </template>
+          <!--              <v-col cols="12">-->
+          <!--                <v-select-->
+          <!--                  v-model="selectedHeaders"-->
+          <!--                  :items="headers"-->
+          <!--                  prepend-inner-icon="mdi-table"-->
+          <!--                  messages="ستون هایی را که میخواهید نمایش دهید انتخاب کنید."-->
+          <!--                  deletable-chips-->
+          <!--                  return-object-->
+          <!--                  hide-selected-->
+          <!--                  outlined-->
+          <!--                  multiple-->
+          <!--                  rounded-->
+          <!--                  chips-->
+          <!--                  dense-->
+          <!--                  flat-->
+          <!--                >-->
+          <!--                  <template v-slot:no-data>-->
+          <!--                    <div class="my-1 mr-3">همه موارد انتخاب شدن</div>-->
+          <!--                  </template>-->
+          <!--                </v-select>-->
+          <!--              </v-col>-->
+          <!--            </v-row>-->
+          <!--          </template>-->
 
-          <template v-slot:item.actions="{ item }">
-            <v-speed-dial direction="right" open-on-hover>
-              <template v-slot:activator>
-                <v-btn fab small outlined color="blue darken-2">
-                  <v-icon> mdi-cog-transfer-outline </v-icon>
-                </v-btn>
-              </template>
-              <v-btn
-                :to="{ path: `/sidebar/${item.id}/edit` }"
-                fab
-                x-small
-                color="green"
-              >
-                <v-icon>mdi-pencil</v-icon>
-              </v-btn>
-            </v-speed-dial>
-          </template>
+          <!--          <template v-slot:item.actions="{ item }">-->
+          <!--            <v-speed-dial direction="right" open-on-hover>-->
+          <!--              <template v-slot:activator>-->
+          <!--                <v-btn fab small outlined color="blue darken-2">-->
+          <!--                  <v-icon> mdi-cog-transfer-outline </v-icon>-->
+          <!--                </v-btn>-->
+          <!--              </template>-->
+          <!--              <v-btn-->
+          <!--                :to="{ path: `/sidebar/${item.id}/edit` }"-->
+          <!--                fab-->
+          <!--                x-small-->
+          <!--                color="green"-->
+          <!--              >-->
+          <!--                <v-icon>mdi-pencil</v-icon>-->
+          <!--              </v-btn>-->
+          <!--            </v-speed-dial>-->
+          <!--          </template>-->
 
-          <template v-slot:item.prepend_icon="{ item }">
-            <v-icon>{{ item.prepend_icon }}</v-icon>
-          </template>
+          <!--          <template v-slot:item.prepend_icon="{ item }">-->
+          <!--            <v-icon>{{ item.prepend_icon }}</v-icon>-->
+          <!--          </template>-->
 
-          <template v-slot:item.append_icon="{ item }">
-            <v-icon>{{ item.append_icon }}</v-icon>
-          </template>
+          <!--          <template v-slot:item.append_icon="{ item }">-->
+          <!--            <v-icon>{{ item.append_icon }}</v-icon>-->
+          <!--          </template>-->
 
-          <template v-slot:item.sidebarItems="{ item }">
-            <span v-for="sidebar of item.sidebarItems" :key="sidebar.id">
-              • {{ sidebar.title }}
-            </span>
-          </template>
+          <!--          <template v-slot:item.sidebarItems="{ item }">-->
+          <!--            <span v-for="sidebar of item.sidebarItems" :key="sidebar.id">-->
+          <!--              • {{ sidebar.title }}-->
+          <!--            </span>-->
+          <!--          </template>-->
 
-          <template
-            v-slot:footer.page-text="{ pageStart, pageStop, itemsLength }"
-          >
-            <div>
-              <span>نمایش : {{ pageStart }}</span>
-              <span>تا {{ pageStop }}</span>
-            </div>
-            <div>
-              <span>تعداد کل : {{ itemsLength }}</span>
-            </div>
-          </template>
+          <!--          <template-->
+          <!--            v-slot:footer.page-text="{ pageStart, pageStop, itemsLength }"-->
+          <!--          >-->
+          <!--            <div>-->
+          <!--              <span>نمایش : {{ pageStart }}</span>-->
+          <!--              <span>تا {{ pageStop }}</span>-->
+          <!--            </div>-->
+          <!--            <div>-->
+          <!--              <span>تعداد کل : {{ itemsLength }}</span>-->
+          <!--            </div>-->
+          <!--          </template>-->
         </v-data-table>
       </v-col>
     </v-row>

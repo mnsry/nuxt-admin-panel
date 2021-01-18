@@ -63,7 +63,6 @@ export default {
   },
   data() {
     return {
-      errorPic: require(`@/assets/images/error/500.png`),
       pageNotFound: 'صفحه مورد نظر پیدا نشد!',
       otherError: 'خطایی روی داده!',
     }

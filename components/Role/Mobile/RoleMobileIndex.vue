@@ -24,61 +24,61 @@
           single-expand
           :expanded.sync="expanded"
         >
-          <template v-slot:top>
-            <v-row justify="center" dense>
-              <v-col cols="3" class="d-flex child-flex">
-                <v-btn :to="{ name: 'role-create' }" outlined rounded text>
-                  <v-icon color="success" left>mdi-plus</v-icon>
-                  <span class="green--text">جدید</span>
-                </v-btn>
-              </v-col>
+          <!--          <template v-slot:top>-->
+          <!--            <v-row justify="center" dense>-->
+          <!--              <v-col cols="3" class="d-flex child-flex">-->
+          <!--                <v-btn :to="{ name: 'role-create' }" outlined rounded text>-->
+          <!--                  <v-icon color="success" left>mdi-plus</v-icon>-->
+          <!--                  <span class="green&#45;&#45;text">جدید</span>-->
+          <!--                </v-btn>-->
+          <!--              </v-col>-->
 
-              <v-col cols="9">
-                <v-text-field
-                  v-model="search"
-                  prepend-inner-icon="mdi-magnify"
-                  placeholder="جستجو ..."
-                  prefix=" "
-                  clearable
-                  rounded
-                  outlined
-                  dense
-                  flat
-                ></v-text-field>
-              </v-col>
-            </v-row>
-          </template>
+          <!--              <v-col cols="9">-->
+          <!--                <v-text-field-->
+          <!--                  v-model="search"-->
+          <!--                  prepend-inner-icon="mdi-magnify"-->
+          <!--                  placeholder="جستجو ..."-->
+          <!--                  prefix=" "-->
+          <!--                  clearable-->
+          <!--                  rounded-->
+          <!--                  outlined-->
+          <!--                  dense-->
+          <!--                  flat-->
+          <!--                ></v-text-field>-->
+          <!--              </v-col>-->
+          <!--            </v-row>-->
+          <!--          </template>-->
 
-          <template v-slot:expanded-item="{ headers, item }">
-            <td :colspan="headers.length" class="text-center">
-              <span class="pl-4">مدیریت نقش: </span>
-              <v-btn
-                :to="{ path: `/role/${item.id}` }"
-                fab
-                x-small
-                color="indigo"
-              >
-                <v-icon>mdi-eye</v-icon>
-              </v-btn>
-              <v-btn
-                :to="{ path: `/role/${item.id}/edit` }"
-                fab
-                x-small
-                class="mx-2"
-                color="green"
-              >
-                <v-icon>mdi-pencil</v-icon>
-              </v-btn>
-              <v-btn
-                :to="{ path: `/role/${item.id}/delete` }"
-                fab
-                x-small
-                color="red"
-              >
-                <v-icon>mdi-delete</v-icon>
-              </v-btn>
-            </td>
-          </template>
+          <!--          <template v-slot:expanded-item="{ headers, item }">-->
+          <!--            <td :colspan="headers.length" class="text-center">-->
+          <!--              <span class="pl-4">مدیریت نقش: </span>-->
+          <!--              <v-btn-->
+          <!--                :to="{ path: `/role/${item.id}` }"-->
+          <!--                fab-->
+          <!--                x-small-->
+          <!--                color="indigo"-->
+          <!--              >-->
+          <!--                <v-icon>mdi-eye</v-icon>-->
+          <!--              </v-btn>-->
+          <!--              <v-btn-->
+          <!--                :to="{ path: `/role/${item.id}/edit` }"-->
+          <!--                fab-->
+          <!--                x-small-->
+          <!--                class="mx-2"-->
+          <!--                color="green"-->
+          <!--              >-->
+          <!--                <v-icon>mdi-pencil</v-icon>-->
+          <!--              </v-btn>-->
+          <!--              <v-btn-->
+          <!--                :to="{ path: `/role/${item.id}/delete` }"-->
+          <!--                fab-->
+          <!--                x-small-->
+          <!--                color="red"-->
+          <!--              >-->
+          <!--                <v-icon>mdi-delete</v-icon>-->
+          <!--              </v-btn>-->
+          <!--            </td>-->
+          <!--          </template>-->
         </v-data-table>
       </v-col>
     </v-row>

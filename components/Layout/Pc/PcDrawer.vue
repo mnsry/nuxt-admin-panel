@@ -65,7 +65,7 @@
             <template #activator>
               <v-list-item-avatar class="mr-n2">
                 <v-img
-                  :lazy-src="require('@/assets/images/error/404.png')"
+                  :lazy-src="require('@/assets/images/logo/mansory.png')"
                   :src="profile.avatar"
                   :alt="profile.name"
                 />
