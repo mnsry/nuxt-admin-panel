@@ -1,11 +1,4 @@
-# STATIC
+<p align="center">STATIC</p>
 
-**This directory is not required, you can delete it if you don't want to use it.**
-
-This directory contains your static files.
-Each file inside this directory is mapped to `/`.
-Thus you'd want to delete this README.md before deploying to production.
-
-Example: `/static/robots.txt` is mapped as `/robots.txt`.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/guide/assets#static).
+## <div align="right">ثابت ها !</div>
+<p align="right">درواقع این فایل رو ناکست موقع بیلد در روت خودش قرار میدهد مثلا فایل سرویس ورکر که مربوط به وب اپلیکیشن هست هنگام باز کردن سایت باید در روت اپلیکیشن شما باشد و یا ایکن اصلی سایت که باید در روت باشد اینجا قرار میگیرد</p>
