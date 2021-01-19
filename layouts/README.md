@@ -1,7 +1,13 @@
-# LAYOUTS
+<p align="center">LAYOUTS</p>
 
-**This directory is not required, you can delete it if you don't want to use it.**
+## <div align="right">چارچوب اصلی هر پیج</div>
+<div align="right">
+<p>تمام پیج ها از لایه دیفالت ارث بری میکنن  پس ما هدر و فوتر که در تمام صفحات مشترک هست اینجا قرار میدهیم و با توجه به داکیومنت ویوتی فای کامپوننت های ویوتی فای رو رعایت کردیم و برای پشت زمینه تم انتخاب کردیم و بازهم چون پنل ادمین سمت توسعه دهنده یا کاربر ادمین اپلیکیشن هست ما فقط از تم دارک استفاده کردیم</p>
+<p>شاید تم لایت در اقدام بعدی اضافه شود اما هیچ گاه تم دارک از پنل حذف نمی شود</p>
+</div>
 
-This directory contains your Application Layouts.
+## <div align="right">فایل empty</div>
+<p align="right">این فایل رو برای صفحات لاگین که نیاز به هدر یا فوتر ندارد در نظر گرفتیم و از اسمش مشخص هست یک صفحه خالی هست اما از تم استفاده میکند</p>
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/guide/views#layouts).
+## <div align="right">فایل error</div>
+<p align="right">در پکیج ناکست متد هایی برای هندل کردن ارر وجود دارد برای نمایش این ارر ها و حتی هندل کردن ارر های خودمون این فایل رو ایجاد کردیم و ارر رو بصورت پاراپ دریافت و چاپ میکنیم و این صفحه از والد لایوت دیفالت استفاده میکند</p>
