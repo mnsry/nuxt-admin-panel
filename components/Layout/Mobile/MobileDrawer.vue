@@ -1,5 +1,11 @@
 <template>
-  <v-bottom-navigation v-if="mobile" color="rgba(0,0,0,1)" height="45" grow app>
+  <v-bottom-navigation
+    v-if="mobile"
+    background-color="rgba(0,0,0,1)"
+    height="45"
+    grow
+    app
+  >
     <v-btn v-for="(item, i) of items" :key="i" :to="{ name: item.route }">
       <v-icon>{{ item.icon }}</v-icon>
     </v-btn>

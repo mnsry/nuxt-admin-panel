@@ -35,11 +35,11 @@
     </v-btn>
 
     <v-menu offset-y bottom>
-      <!--      <template v-slot:activator="{ on, attrs }">-->
-      <!--        <v-btn icon v-bind="attrs" v-on="on">-->
-      <!--          <v-icon>mdi-compare</v-icon>-->
-      <!--        </v-btn>-->
-      <!--      </template>-->
+      <template #[`activator`]="{ on, attrs }">
+        <v-btn icon v-bind="attrs" v-on="on">
+          <v-icon>mdi-compare</v-icon>
+        </v-btn>
+      </template>
 
       <v-card class="mx-auto" max-width="300">
         <v-system-bar color="indigo darken-4" dark>

@@ -20,121 +20,121 @@
           :items="users"
           sort-by="id"
         >
-          <!--          <template v-slot:top>-->
-          <!--            <v-row justify="center" dense>-->
-          <!--              <v-col cols="2">-->
-          <!--                <v-btn-->
-          <!--                  :to="{ name: 'user-create' }"-->
-          <!--                  outlined-->
-          <!--                  rounded-->
-          <!--                  block-->
-          <!--                  text-->
-          <!--                >-->
-          <!--                  <v-icon color="success" left>mdi-plus</v-icon>-->
-          <!--                  <span class="green&#45;&#45;text">افزودن جدید</span>-->
-          <!--                </v-btn>-->
-          <!--              </v-col>-->
+          <template #top>
+            <v-row justify="center" dense>
+              <v-col cols="2">
+                <v-btn
+                  :to="{ name: 'user-create' }"
+                  outlined
+                  rounded
+                  block
+                  text
+                >
+                  <v-icon color="success" left>mdi-plus</v-icon>
+                  <span class="green--text">افزودن جدید</span>
+                </v-btn>
+              </v-col>
 
-          <!--              <v-col cols="9">-->
-          <!--                <v-text-field-->
-          <!--                  v-model="search"-->
-          <!--                  prepend-inner-icon="mdi-magnify"-->
-          <!--                  placeholder="جستجو ..."-->
-          <!--                  prefix=" "-->
-          <!--                  clearable-->
-          <!--                  rounded-->
-          <!--                  outlined-->
-          <!--                  dense-->
-          <!--                  flat-->
-          <!--                ></v-text-field>-->
-          <!--              </v-col>-->
+              <v-col cols="9">
+                <v-text-field
+                  v-model="search"
+                  prepend-inner-icon="mdi-magnify"
+                  placeholder="جستجو ..."
+                  prefix=" "
+                  clearable
+                  rounded
+                  outlined
+                  dense
+                  flat
+                ></v-text-field>
+              </v-col>
 
-          <!--              <v-col cols="12">-->
-          <!--                <v-select-->
-          <!--                  v-model="selectedHeaders"-->
-          <!--                  :items="headers"-->
-          <!--                  prepend-inner-icon="mdi-table"-->
-          <!--                  messages="ستون هایی را که میخواهید نمایش دهید انتخاب کنید."-->
-          <!--                  deletable-chips-->
-          <!--                  return-object-->
-          <!--                  hide-selected-->
-          <!--                  outlined-->
-          <!--                  multiple-->
-          <!--                  rounded-->
-          <!--                  chips-->
-          <!--                  dense-->
-          <!--                  flat-->
-          <!--                >-->
-          <!--                  <template v-slot:no-data>-->
-          <!--                    <div class="my-1 mr-3">همه موارد انتخاب شدن</div>-->
-          <!--                  </template>-->
-          <!--                </v-select>-->
-          <!--              </v-col>-->
-          <!--            </v-row>-->
-          <!--          </template>-->
+              <v-col cols="12">
+                <v-select
+                  v-model="selectedHeaders"
+                  :items="headers"
+                  prepend-inner-icon="mdi-table"
+                  messages="ستون هایی را که میخواهید نمایش دهید انتخاب کنید."
+                  deletable-chips
+                  return-object
+                  hide-selected
+                  outlined
+                  multiple
+                  rounded
+                  chips
+                  dense
+                  flat
+                >
+                  <template #no-data>
+                    <div class="my-1 mr-3">همه موارد انتخاب شدن</div>
+                  </template>
+                </v-select>
+              </v-col>
+            </v-row>
+          </template>
 
-          <!--          <template v-slot:item.actions="{ item }">-->
-          <!--            <v-speed-dial direction="right" open-on-hover>-->
-          <!--              <template v-slot:activator>-->
-          <!--                <v-btn fab small outlined color="blue darken-2">-->
-          <!--                  <v-icon> mdi-account-cog </v-icon>-->
-          <!--                </v-btn>-->
-          <!--              </template>-->
-          <!--              <v-btn-->
-          <!--                :to="{ path: `/user/${item.id}` }"-->
-          <!--                fab-->
-          <!--                x-small-->
-          <!--                color="indigo"-->
-          <!--              >-->
-          <!--                <v-icon>mdi-eye</v-icon>-->
-          <!--              </v-btn>-->
-          <!--              <v-btn-->
-          <!--                :to="{ path: `/user/${item.id}/edit` }"-->
-          <!--                fab-->
-          <!--                x-small-->
-          <!--                color="green"-->
-          <!--              >-->
-          <!--                <v-icon>mdi-pencil</v-icon>-->
-          <!--              </v-btn>-->
-          <!--              <v-btn-->
-          <!--                :to="{ path: `/user/${item.id}/delete` }"-->
-          <!--                fab-->
-          <!--                x-small-->
-          <!--                color="red"-->
-          <!--              >-->
-          <!--                <v-icon>mdi-delete</v-icon>-->
-          <!--              </v-btn>-->
-          <!--            </v-speed-dial>-->
-          <!--          </template>-->
+          <template #[`item.actions`]="{ item }">
+            <v-speed-dial direction="right" open-on-hover>
+              <template #activator>
+                <v-btn fab small outlined color="blue darken-2">
+                  <v-icon> mdi-account-cog </v-icon>
+                </v-btn>
+              </template>
+              <v-btn
+                :to="{ path: `/user/${item.id}` }"
+                fab
+                x-small
+                color="indigo"
+              >
+                <v-icon>mdi-eye</v-icon>
+              </v-btn>
+              <v-btn
+                :to="{ path: `/user/${item.id}/edit` }"
+                fab
+                x-small
+                color="green"
+              >
+                <v-icon>mdi-pencil</v-icon>
+              </v-btn>
+              <v-btn
+                :to="{ path: `/user/${item.id}/delete` }"
+                fab
+                x-small
+                color="red"
+              >
+                <v-icon>mdi-delete</v-icon>
+              </v-btn>
+            </v-speed-dial>
+          </template>
 
-          <!--          <template v-slot:item.roles="{ item }">-->
-          <!--            <span v-for="role of item.roles" :key="role.id">-->
-          <!--              • {{ role.display_name }}-->
-          <!--            </span>-->
-          <!--          </template>-->
+          <template #[`item.roles`]="{ item }">
+            <span v-for="role of item.roles" :key="role.id">
+              • {{ role.display_name }}
+            </span>
+          </template>
 
-          <!--          <template v-slot:item.avatar="{ item }">-->
-          <!--            <div class="p-2">-->
-          <!--              <v-img-->
-          <!--                :src="item.avatar"-->
-          <!--                :alt="item.name"-->
-          <!--                width="50"-->
-          <!--                height="50"-->
-          <!--              ></v-img>-->
-          <!--            </div>-->
-          <!--          </template>-->
+          <template #[`item.avatar`]="{ item }">
+            <div class="p-2">
+              <v-img
+                :src="item.avatar"
+                :alt="item.name"
+                width="50"
+                height="50"
+              ></v-img>
+            </div>
+          </template>
 
-          <!--          <template-->
-          <!--            v-slot:footer.page-text="{ pageStart, pageStop, itemsLength }"-->
-          <!--          >-->
-          <!--            <div>-->
-          <!--              <span>نمایش : {{ pageStart }}</span>-->
-          <!--              <span>تا {{ pageStop }}</span>-->
-          <!--            </div>-->
-          <!--            <div>-->
-          <!--              <span>تعداد کل : {{ itemsLength }}</span>-->
-          <!--            </div>-->
-          <!--          </template>-->
+          <template
+            #[`footer.page-text`]="{ pageStart, pageStop, itemsLength }"
+          >
+            <div>
+              <span>نمایش : {{ pageStart }}</span>
+              <span>تا {{ pageStop }}</span>
+            </div>
+            <div>
+              <span>تعداد کل : {{ itemsLength }}</span>
+            </div>
+          </template>
         </v-data-table>
       </v-col>
     </v-row>

@@ -24,72 +24,72 @@
           :expanded.sync="expanded"
           show-expand
         >
-          <!--          <template v-slot:top>-->
-          <!--            <v-row justify="center" dense>-->
-          <!--              <v-col cols="3" class="d-flex child-flex">-->
-          <!--                <v-btn :to="{ name: 'user-create' }" outlined rounded text>-->
-          <!--                  <v-icon color="success" left>mdi-plus</v-icon>-->
-          <!--                  <span class="green&#45;&#45;text">جدید</span>-->
-          <!--                </v-btn>-->
-          <!--              </v-col>-->
+          <template #top>
+            <v-row justify="center" dense>
+              <v-col cols="3" class="d-flex child-flex">
+                <v-btn :to="{ name: 'user-create' }" outlined rounded text>
+                  <v-icon color="success" left>mdi-plus</v-icon>
+                  <span class="green--text">جدید</span>
+                </v-btn>
+              </v-col>
 
-          <!--              <v-col cols="9">-->
-          <!--                <v-text-field-->
-          <!--                  v-model="search"-->
-          <!--                  prepend-inner-icon="mdi-magnify"-->
-          <!--                  placeholder="جستجو ..."-->
-          <!--                  prefix=" "-->
-          <!--                  clearable-->
-          <!--                  rounded-->
-          <!--                  outlined-->
-          <!--                  dense-->
-          <!--                  flat-->
-          <!--                ></v-text-field>-->
-          <!--              </v-col>-->
-          <!--            </v-row>-->
-          <!--          </template>-->
+              <v-col cols="9">
+                <v-text-field
+                  v-model="search"
+                  prepend-inner-icon="mdi-magnify"
+                  placeholder="جستجو ..."
+                  prefix=" "
+                  clearable
+                  rounded
+                  outlined
+                  dense
+                  flat
+                ></v-text-field>
+              </v-col>
+            </v-row>
+          </template>
 
-          <!--          <template v-slot:expanded-item="{ headers, item }">-->
-          <!--            <td :colspan="headers.length" class="text-center">-->
-          <!--              <v-btn-->
-          <!--                :to="{ path: `/user/${item.id}` }"-->
-          <!--                fab-->
-          <!--                x-small-->
-          <!--                color="indigo"-->
-          <!--              >-->
-          <!--                <v-icon>mdi-eye</v-icon>-->
-          <!--              </v-btn>-->
-          <!--              <v-btn-->
-          <!--                :to="{ path: `/user/${item.id}/edit` }"-->
-          <!--                fab-->
-          <!--                x-small-->
-          <!--                class="mx-2"-->
-          <!--                color="green"-->
-          <!--              >-->
-          <!--                <v-icon>mdi-pencil</v-icon>-->
-          <!--              </v-btn>-->
-          <!--              <v-btn-->
-          <!--                :to="{ path: `/user/${item.id}/delete` }"-->
-          <!--                fab-->
-          <!--                x-small-->
-          <!--                color="red"-->
-          <!--              >-->
-          <!--                <v-icon>mdi-delete</v-icon>-->
-          <!--              </v-btn>-->
-          <!--              <span class="pr-4">موبایل: </span>{{ item.mobile }}-->
-          <!--            </td>-->
-          <!--          </template>-->
+          <template #expanded-item="{ headers, item }">
+            <td :colspan="headers.length" class="text-center">
+              <v-btn
+                :to="{ path: `/user/${item.id}` }"
+                fab
+                x-small
+                color="indigo"
+              >
+                <v-icon>mdi-eye</v-icon>
+              </v-btn>
+              <v-btn
+                :to="{ path: `/user/${item.id}/edit` }"
+                fab
+                x-small
+                class="mx-2"
+                color="green"
+              >
+                <v-icon>mdi-pencil</v-icon>
+              </v-btn>
+              <v-btn
+                :to="{ path: `/user/${item.id}/delete` }"
+                fab
+                x-small
+                color="red"
+              >
+                <v-icon>mdi-delete</v-icon>
+              </v-btn>
+              <span class="pr-4">موبایل: </span>{{ item.mobile }}
+            </td>
+          </template>
 
-          <!--          <template v-slot:item.avatar="{ item }">-->
-          <!--            <div class="p-2">-->
-          <!--              <v-img-->
-          <!--                :src="item.avatar"-->
-          <!--                :alt="item.name"-->
-          <!--                width="50"-->
-          <!--                height="50"-->
-          <!--              ></v-img>-->
-          <!--            </div>-->
-          <!--          </template>-->
+          <template #[`item.avatar`]="{ item }">
+            <div class="p-2">
+              <v-img
+                :src="item.avatar"
+                :alt="item.name"
+                width="50"
+                height="50"
+              ></v-img>
+            </div>
+          </template>
         </v-data-table>
       </v-col>
     </v-row>

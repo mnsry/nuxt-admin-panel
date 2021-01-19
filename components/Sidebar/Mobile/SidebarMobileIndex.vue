@@ -20,45 +20,45 @@
           :search="search"
           :items="sidebars"
         >
-          <!--          <template v-slot:top>-->
-          <!--            <v-row justify="center" dense>-->
-          <!--              <v-col cols="3" class="d-flex child-flex">-->
-          <!--                <v-btn disabled outlined rounded text>-->
-          <!--                  <v-icon color="success" left>mdi-plus</v-icon>-->
-          <!--                  <span class="green&#45;&#45;text">جدید</span>-->
-          <!--                </v-btn>-->
-          <!--              </v-col>-->
+          <template #top>
+            <v-row justify="center" dense>
+              <v-col cols="3" class="d-flex child-flex">
+                <v-btn disabled outlined rounded text>
+                  <v-icon color="success" left>mdi-plus</v-icon>
+                  <span class="green--text">جدید</span>
+                </v-btn>
+              </v-col>
 
-          <!--              <v-col cols="9">-->
-          <!--                <v-text-field-->
-          <!--                  v-model="search"-->
-          <!--                  prepend-inner-icon="mdi-magnify"-->
-          <!--                  placeholder="جستجو ..."-->
-          <!--                  prefix=" "-->
-          <!--                  clearable-->
-          <!--                  rounded-->
-          <!--                  outlined-->
-          <!--                  dense-->
-          <!--                  flat-->
-          <!--                ></v-text-field>-->
-          <!--              </v-col>-->
-          <!--            </v-row>-->
-          <!--          </template>-->
+              <v-col cols="9">
+                <v-text-field
+                  v-model="search"
+                  prepend-inner-icon="mdi-magnify"
+                  placeholder="جستجو ..."
+                  prefix=" "
+                  clearable
+                  rounded
+                  outlined
+                  dense
+                  flat
+                ></v-text-field>
+              </v-col>
+            </v-row>
+          </template>
 
-          <!--          <template v-slot:item.actions="{ item }">-->
-          <!--            <v-btn-->
-          <!--              :to="{ path: `/sidebar/${item.id}/edit` }"-->
-          <!--              fab-->
-          <!--              x-small-->
-          <!--              color="green"-->
-          <!--            >-->
-          <!--              <v-icon>mdi-pencil</v-icon>-->
-          <!--            </v-btn>-->
-          <!--          </template>-->
+          <template #[`item.actions`]="{ item }">
+            <v-btn
+              :to="{ path: `/sidebar/${item.id}/edit` }"
+              fab
+              x-small
+              color="green"
+            >
+              <v-icon>mdi-pencil</v-icon>
+            </v-btn>
+          </template>
 
-          <!--          <template v-slot:item.prepend_icon="{ item }">-->
-          <!--            <v-icon>{{ item.prepend_icon }}</v-icon>-->
-          <!--          </template>-->
+          <template #[`item.prepend_icon`]="{ item }">
+            <v-icon>{{ item.prepend_icon }}</v-icon>
+          </template>
         </v-data-table>
       </v-col>
     </v-row>
