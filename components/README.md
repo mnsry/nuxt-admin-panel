@@ -1,7 +1,10 @@
-# COMPONENTS
+<p align="center">COMPONENTS</p>
 
-**This directory is not required, you can delete it if you don't want to use it.**
+## <div align="right">کامپوننت </div>
+<div align="right">
+<p>کامپوننت ها برای تکرار ها مورد استفاده قرار میگیرن مثلا یک کارد طراحی میکنیم و از ان در صفحات مختلف هزاران بار تکرار میکنیم و با یک تغییر در همه جا تغییر میکند</p>
+<p>اما ما در اینجا اومدیم طراحی قالب دسکتاپ و موبایلی را توسط کامپوننت ها جدا کردیم مثلا ما در نمایش در حالت دستکتاپ از کارد برای نمایش تم استفاده کردیم اما برای نمایش تم در حالت موبایلی از تگ  های مربوط به لیست استفاده کردیم</p>
+</div>
 
-The components directory contains your Vue.js Components.
-
-_Nuxt.js doesn't supercharge these components._
+## <div align="right">اقدام بعدی</div>
+<p align="right">ما در آینده کامپوننت های موبایل را حذف میکنیم چون پنل ادمین ک بخش مهم و اصلی هر اپلیکیشن هست توجیح مدیریت با موبایل را ندارد و کد های قالب به پوشه پیج ها و در پیج ها خودش برمیگردد</p>
