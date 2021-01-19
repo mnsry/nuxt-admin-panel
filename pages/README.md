@@ -1,6 +1,14 @@
-# PAGES
+<p align="center">PAGES</p>
 
-This directory contains your Application Views and Routes.
-The framework reads all the `*.vue` files inside this directory and creates the router of your application.
+## <div align="right">صفحات یا مسیرها</div>
+<div align="right">
+<p>در ابتدا اول مسیر از ساید بار سمت سرور گرفته میشود بعد ما صفحه را در ناکست ایجاد میکنیم</p>
+<p>همچنین که می دانیم کراد در لاراول صفحات مختلف دارد ما همانند لاراول صفحات ناکست را ایجاد میکنیم</p>
+<p>تمام اطلاعاتی که از سرور میگیریم با استور و در اکشن صدا میزنیم و چون نیاز به لوکال استورج داریم فچ سمت سرور را غیر فعال میکنیم</p>
+</div>
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/guide/routing).
+## <div align="right">اقدام بعدی</div>
+<div align="right">
+<p>ما چون در صفحات چک میکنیم سایز صفحه رو تا کامپوننت موبایل یا دسکتاپی رو نمایش دهیم با حذف طراحی موبایل این شرط حذف می شود</p>
+<p>احتمال دارد ما در فچ مستقیم اکسیوس را صدا بزنیم و اکشن در استور حذف شود</p>
+</div>
