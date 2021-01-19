@@ -12,6 +12,9 @@
 
 <script>
 export default {
+  head: {
+    titleTemplate: '%s | کاربران: ایجاد جدید',
+  },
   computed: {
     mobile() {
       return this.$vuetify.breakpoint.smAndDown
@@ -19,9 +22,6 @@ export default {
   },
   mounted() {
     this.$store.commit('navbar/updateNav', 'کاربران | ایجاد کاربر جدید')
-  },
-  head: {
-    titleTemplate: '%s | کاربران: ایجاد جدید',
   },
 }
 </script>

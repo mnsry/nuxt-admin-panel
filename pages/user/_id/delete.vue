@@ -55,6 +55,9 @@ export default {
   async fetch() {
     await this.$store.dispatch('user/getUser', this.$route.params.id)
   },
+  head: {
+    titleTemplate: '%s | کاربر: حذف کردن کاربر',
+  },
   computed: {
     mobile() {
       return this.$vuetify.breakpoint.smAndDown
@@ -63,9 +66,6 @@ export default {
   mounted() {
     this.$store.commit('navbar/updateNav', 'کاربران | حذف کردن کاربر')
   },
-  head: {
-    titleTemplate: '%s | کاربر: حذف کردن کاربر',
-  },
-  fetchOnServer: false
+  fetchOnServer: false,
 }
 </script>

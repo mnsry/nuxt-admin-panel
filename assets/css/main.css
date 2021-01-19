@@ -8,14 +8,6 @@
   src: url("~assets/fonts/fa-caption.otf") format("opentype");
 }
 
-.en-font {
-  font-family: 'English', serif;
-}
-
-.fa-font {
-  font-family: 'Persion', serif;
-}
-
 .app_center {
   justify-content: center;
   align-items: center;
@@ -32,7 +24,6 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  font-family: 'Persion', serif;
 }
 
 .v-navigation-drawer__content::-webkit-scrollbar {

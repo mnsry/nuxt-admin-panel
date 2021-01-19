@@ -63,15 +63,9 @@ export default {
   },
   data() {
     return {
-      errorPic: require(`@/assets/images/error/500.png`),
       pageNotFound: 'صفحه مورد نظر پیدا نشد!',
       otherError: 'خطایی روی داده!',
     }
-  },
-  methods: {
-    reload() {
-      location.reload()
-    },
   },
   head() {
     const title =
@@ -79,6 +73,11 @@ export default {
     return {
       title,
     }
+  },
+  methods: {
+    reload() {
+      location.reload()
+    },
   },
 }
 </script>

@@ -24,7 +24,7 @@
           :expanded.sync="expanded"
           show-expand
         >
-          <template v-slot:top>
+          <template #top>
             <v-row justify="center" dense>
               <v-col cols="3" class="d-flex child-flex">
                 <v-btn :to="{ name: 'user-create' }" outlined rounded text>
@@ -49,7 +49,7 @@
             </v-row>
           </template>
 
-          <template v-slot:expanded-item="{ headers, item }">
+          <template #expanded-item="{ headers, item }">
             <td :colspan="headers.length" class="text-center">
               <v-btn
                 :to="{ path: `/user/${item.id}` }"
@@ -80,7 +80,7 @@
             </td>
           </template>
 
-          <template v-slot:item.avatar="{ item }">
+          <template #[`item.avatar`]="{ item }">
             <div class="p-2">
               <v-img
                 :src="item.avatar"

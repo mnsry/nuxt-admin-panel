@@ -35,7 +35,7 @@
     </v-btn>
 
     <v-menu offset-y bottom>
-      <template v-slot:activator="{ on, attrs }">
+      <template #[`activator`]="{ on, attrs }">
         <v-btn icon v-bind="attrs" v-on="on">
           <v-icon>mdi-compare</v-icon>
         </v-btn>

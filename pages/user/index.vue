@@ -55,6 +55,9 @@ export default {
   async fetch() {
     await this.$store.dispatch('user/getUsers')
   },
+  head: {
+    titleTemplate: '%s | کاربران',
+  },
   computed: {
     mobile() {
       return this.$vuetify.breakpoint.smAndDown
@@ -63,9 +66,6 @@ export default {
   mounted() {
     this.$store.commit('navbar/updateNav', 'کاربران')
   },
-  head: {
-    titleTemplate: '%s | کاربران',
-  },
-  fetchOnServer: false
+  fetchOnServer: false,
 }
 </script>

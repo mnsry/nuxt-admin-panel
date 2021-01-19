@@ -55,6 +55,9 @@ export default {
   async fetch() {
     await this.$store.dispatch('user/getUser', this.$route.params.id)
   },
+  head: {
+    titleTemplate: '%s | کاربر: نمایش اطلاعات',
+  },
   computed: {
     mobile() {
       return this.$vuetify.breakpoint.smAndDown
@@ -63,9 +66,6 @@ export default {
   mounted() {
     this.$store.commit('navbar/updateNav', 'کاربران | نمایش اطلاعات کاربر')
   },
-  head: {
-    titleTemplate: '%s | کاربر: نمایش اطلاعات',
-  },
-  fetchOnServer: false
+  fetchOnServer: false,
 }
 </script>

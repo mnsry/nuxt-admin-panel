@@ -55,6 +55,9 @@ export default {
   async fetch() {
     await this.$store.dispatch('product/getProducts')
   },
+  head: {
+    titleTemplate: '%s | محصولات',
+  },
   computed: {
     mobile() {
       return this.$vuetify.breakpoint.smAndDown
@@ -63,9 +66,6 @@ export default {
   mounted() {
     this.$store.commit('navbar/updateNav', 'محصولات')
   },
-  head: {
-    titleTemplate: '%s | محصولات',
-  },
-  fetchOnServer: false
+  fetchOnServer: false,
 }
 </script>

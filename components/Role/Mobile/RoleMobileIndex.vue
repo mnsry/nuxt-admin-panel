@@ -24,7 +24,7 @@
           single-expand
           :expanded.sync="expanded"
         >
-          <template v-slot:top>
+          <template #top>
             <v-row justify="center" dense>
               <v-col cols="3" class="d-flex child-flex">
                 <v-btn :to="{ name: 'role-create' }" outlined rounded text>
@@ -49,7 +49,7 @@
             </v-row>
           </template>
 
-          <template v-slot:expanded-item="{ headers, item }">
+          <template #expanded-item="{ headers, item }">
             <td :colspan="headers.length" class="text-center">
               <span class="pl-4">مدیریت نقش: </span>
               <v-btn

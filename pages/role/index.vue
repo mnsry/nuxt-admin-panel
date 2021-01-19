@@ -55,6 +55,9 @@ export default {
   async fetch() {
     await this.$store.dispatch('role/getRoles')
   },
+  head: {
+    titleTemplate: '%s | نقش ها',
+  },
   computed: {
     mobile() {
       return this.$vuetify.breakpoint.smAndDown
@@ -63,9 +66,6 @@ export default {
   mounted() {
     this.$store.commit('navbar/updateNav', 'نقش ها')
   },
-  head: {
-    titleTemplate: '%s | نقش ها',
-  },
-  fetchOnServer: false
+  fetchOnServer: false,
 }
 </script>

@@ -17,7 +17,7 @@
           height="100px"
           dense
         >
-          <template v-slot:default>
+          <template #default>
             <thead class="justify-content">
               <tr>
                 <th></th>
@@ -61,7 +61,7 @@
           :items="sidebars"
           sort-by="id"
         >
-          <template v-slot:top>
+          <template #top>
             <v-row justify="center" dense>
               <v-col cols="2">
                 <v-btn outlined rounded block text>
@@ -100,7 +100,7 @@
                   dense
                   flat
                 >
-                  <template v-slot:no-data>
+                  <template #no-data>
                     <div class="my-1 mr-3">همه موارد انتخاب شدن</div>
                   </template>
                 </v-select>
@@ -108,9 +108,9 @@
             </v-row>
           </template>
 
-          <template v-slot:item.actions="{ item }">
+          <template #[`item.actions`]="{ item }">
             <v-speed-dial direction="right" open-on-hover>
-              <template v-slot:activator>
+              <template #activator>
                 <v-btn fab small outlined color="blue darken-2">
                   <v-icon> mdi-cog-transfer-outline </v-icon>
                 </v-btn>
@@ -126,22 +126,22 @@
             </v-speed-dial>
           </template>
 
-          <template v-slot:item.prepend_icon="{ item }">
+          <template #[`item.prepend_icon`]="{ item }">
             <v-icon>{{ item.prepend_icon }}</v-icon>
           </template>
 
-          <template v-slot:item.append_icon="{ item }">
+          <template #[`item.append_icon`]="{ item }">
             <v-icon>{{ item.append_icon }}</v-icon>
           </template>
 
-          <template v-slot:item.sidebarItems="{ item }">
+          <template #[`item.sidebarItems`]="{ item }">
             <span v-for="sidebar of item.sidebarItems" :key="sidebar.id">
               • {{ sidebar.title }}
             </span>
           </template>
 
           <template
-            v-slot:footer.page-text="{ pageStart, pageStop, itemsLength }"
+            #[`footer.page-text`]="{ pageStart, pageStop, itemsLength }"
           >
             <div>
               <span>نمایش : {{ pageStart }}</span>

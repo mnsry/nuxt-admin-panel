@@ -20,7 +20,7 @@
           :search="search"
           :items="sidebars"
         >
-          <template v-slot:top>
+          <template #top>
             <v-row justify="center" dense>
               <v-col cols="3" class="d-flex child-flex">
                 <v-btn disabled outlined rounded text>
@@ -45,7 +45,7 @@
             </v-row>
           </template>
 
-          <template v-slot:item.actions="{ item }">
+          <template #[`item.actions`]="{ item }">
             <v-btn
               :to="{ path: `/sidebar/${item.id}/edit` }"
               fab
@@ -56,7 +56,7 @@
             </v-btn>
           </template>
 
-          <template v-slot:item.prepend_icon="{ item }">
+          <template #[`item.prepend_icon`]="{ item }">
             <v-icon>{{ item.prepend_icon }}</v-icon>
           </template>
         </v-data-table>

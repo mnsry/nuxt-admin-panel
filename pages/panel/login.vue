@@ -87,6 +87,9 @@ export default {
       emailRequired: (v) => !!v || 'وارد کردن ایمیل اجباری است!',
     },
   }),
+  head: {
+    titleTemplate: '%s | ورود به پنل',
+  },
   computed: {
     wait() {
       return this.$store.state.auth.wait
@@ -102,9 +105,6 @@ export default {
         await this.$store.dispatch('auth/login', [this.email, this.password])
       }
     },
-  },
-  head: {
-    titleTemplate: '%s | ورود به پنل',
   },
 }
 </script>

@@ -20,7 +20,7 @@
           :items="products"
           sort-by="id"
         >
-          <template v-slot:top>
+          <template #top>
             <v-row justify="center" dense>
               <v-col cols="2">
                 <v-btn
@@ -65,7 +65,7 @@
                   dense
                   flat
                 >
-                  <template v-slot:no-data>
+                  <template #no-data>
                     <div class="my-1 mr-3">همه موارد انتخاب شدن</div>
                   </template>
                 </v-select>
@@ -73,11 +73,11 @@
             </v-row>
           </template>
 
-          <template v-slot:item.user="{ item }">
+          <template #[`item.user`]="{ item }">
             {{ item.user.name }}
           </template>
 
-          <template v-slot:item.image="{ item }">
+          <template #[`item.image`]="{ item }">
             <div class="p-2">
               <v-img
                 :src="item.image"
@@ -88,9 +88,9 @@
             </div>
           </template>
 
-          <template v-slot:item.actions="{ item }">
+          <template #[`item.actions`]="{ item }">
             <v-speed-dial direction="right" open-on-hover>
-              <template v-slot:activator>
+              <template #activator>
                 <v-btn fab small outlined color="blue darken-2">
                   <v-icon> mdi-shopping-search </v-icon>
                 </v-btn>
@@ -123,7 +123,7 @@
           </template>
 
           <template
-            v-slot:footer.page-text="{ pageStart, pageStop, itemsLength }"
+            #[`footer.page-text`]="{ pageStart, pageStop, itemsLength }"
           >
             <div>
               <span>نمایش : {{ pageStart }}</span>

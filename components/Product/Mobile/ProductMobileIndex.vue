@@ -24,7 +24,7 @@
           :expanded.sync="expanded"
           show-expand
         >
-          <template v-slot:top>
+          <template #top>
             <v-row justify="center" dense>
               <v-col cols="3">
                 <v-btn
@@ -55,7 +55,7 @@
             </v-row>
           </template>
 
-          <template v-slot:item.image="{ item }">
+          <template #[`item.image`]="{ item }">
             <div class="p-2">
               <v-img
                 :src="item.image"
@@ -66,7 +66,7 @@
             </div>
           </template>
 
-          <template v-slot:expanded-item="{ headers, item }">
+          <template #expanded-item="{ headers, item }">
             <td :colspan="headers.length" class="text-center">
               <span class="pr-4">مدیریت محصول: </span>{{ item.mobile }}
               <v-btn

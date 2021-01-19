@@ -20,7 +20,7 @@
           :items="users"
           sort-by="id"
         >
-          <template v-slot:top>
+          <template #top>
             <v-row justify="center" dense>
               <v-col cols="2">
                 <v-btn
@@ -65,7 +65,7 @@
                   dense
                   flat
                 >
-                  <template v-slot:no-data>
+                  <template #no-data>
                     <div class="my-1 mr-3">همه موارد انتخاب شدن</div>
                   </template>
                 </v-select>
@@ -73,9 +73,9 @@
             </v-row>
           </template>
 
-          <template v-slot:item.actions="{ item }">
+          <template #[`item.actions`]="{ item }">
             <v-speed-dial direction="right" open-on-hover>
-              <template v-slot:activator>
+              <template #activator>
                 <v-btn fab small outlined color="blue darken-2">
                   <v-icon> mdi-account-cog </v-icon>
                 </v-btn>
@@ -107,13 +107,13 @@
             </v-speed-dial>
           </template>
 
-          <template v-slot:item.roles="{ item }">
+          <template #[`item.roles`]="{ item }">
             <span v-for="role of item.roles" :key="role.id">
               • {{ role.display_name }}
             </span>
           </template>
 
-          <template v-slot:item.avatar="{ item }">
+          <template #[`item.avatar`]="{ item }">
             <div class="p-2">
               <v-img
                 :src="item.avatar"
@@ -125,7 +125,7 @@
           </template>
 
           <template
-            v-slot:footer.page-text="{ pageStart, pageStop, itemsLength }"
+            #[`footer.page-text`]="{ pageStart, pageStop, itemsLength }"
           >
             <div>
               <span>نمایش : {{ pageStart }}</span>

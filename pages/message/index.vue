@@ -13,10 +13,10 @@
 <script>
 export default {
   head: {
-    titleTemplate: '%s | خوش آمدید',
+    titleTemplate: '%s | پیام ها',
   },
   mounted() {
-    this.$store.commit('navbar/updateNav', 'داشبورد')
+    this.$store.commit('navbar/updateNav', 'صندوق پیام')
   },
 }
 </script>

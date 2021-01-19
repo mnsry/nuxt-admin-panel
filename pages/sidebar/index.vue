@@ -55,6 +55,9 @@ export default {
   async fetch() {
     await this.$store.dispatch('sidebar/getApiSidebars')
   },
+  head: {
+    titleTemplate: '%s | آیتم های منو',
+  },
   computed: {
     mobile() {
       return this.$vuetify.breakpoint.smAndDown
@@ -63,9 +66,6 @@ export default {
   mounted() {
     this.$store.commit('navbar/updateNav', 'آیتم های منو')
   },
-  head: {
-    titleTemplate: '%s | آیتم های منو',
-  },
-  fetchOnServer: false
+  fetchOnServer: false,
 }
 </script>

@@ -45,10 +45,10 @@
         <v-col>
           <v-list color="rgba(0,0,0,0)" subheader>
             <v-list-group append-icon="" no-action>
-              <template v-slot:activator>
+              <template #activator>
                 <v-list-item-avatar class="mr-n2">
                   <v-img
-                    :lazy-src="require('@/assets/images/logo/google.png')"
+                    :lazy-src="require('@/assets/images/logo/mansory.png')"
                     :src="profile.avatar"
                     :alt="profile.name"
                   />
@@ -76,7 +76,7 @@
               :append-icon="sidebar.append_icon"
               no-action
             >
-              <template v-slot:activator>
+              <template #activator>
                 <v-list-item-title v-text="sidebar.title" />
               </template>
 
@@ -100,15 +100,18 @@
 
 <script>
 export default {
+  data() {
+    return {
+      logout: 'خروج از سیستم',
+    }
+  },
   async fetch() {
     if (!this.welcome) {
       await this.$store.dispatch('sidebar/getApiSidebars')
     }
   },
-  data() {
-    return {
-      logout: 'خروج از سیستم',
-    }
+  head: {
+    titleTemplate: '%s | دسته ها',
   },
   computed: {
     welcome() {
@@ -130,9 +133,6 @@ export default {
   },
   mounted() {
     this.$store.commit('navbar/updateNav', 'دسته ها')
-  },
-  head: {
-    titleTemplate: '%s | دسته ها',
   },
 }
 </script>

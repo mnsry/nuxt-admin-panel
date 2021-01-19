@@ -3,7 +3,7 @@
     <v-container v-if="mobile">
       <v-list color="rgba(0,0,0,.3)">
         <v-list-group v-model="list">
-          <template v-slot:activator>
+          <template #activator>
             <v-list-item-content>
               <v-list-item-title class="pt-2" v-text="name" />
             </v-list-item-content>
@@ -49,6 +49,9 @@ export default {
       ],
     }
   },
+  head: {
+    titleTemplate: '%s | تنطیمات',
+  },
   computed: {
     mobile() {
       if (this.$vuetify.breakpoint.smAndDown) {
@@ -70,9 +73,6 @@ export default {
   },
   mounted() {
     this.$store.commit('navbar/updateNav', 'تنظیمات')
-  },
-  head: {
-    titleTemplate: '%s | تنطیمات',
   },
 }
 </script>
