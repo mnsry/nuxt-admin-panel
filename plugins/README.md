@@ -1,7 +1,16 @@
-# PLUGINS
+<p align="center">PLUGINS</p>
 
-**This directory is not required, you can delete it if you don't want to use it.**
+## <div align="right">پلاگین یا کانفیگ کاستوم ماژول</div>
+<p align="right">برای اینکه بتونیم روی ماژول ها تغییرات کاستوم داشته باشیم پلاگین اش رو ایجاد میکنیم</p>
 
-This directory contains Javascript plugins that you want to run before mounting the root Vue.js application.
+## <div align="right">پلاگین axios</div>
+<div align="right">
+<p>بسیار قابل اهمیت</p>
+<p>ما اررهای ارسال دیتا رو سمت سرور مدیریت میکنیم و این پلاگین همان ارر ها رو سمت مرورگر مدیریت میکند مثلا با دریافت ارر 401 شما رو به صفحه لاگین کردن هدایت میکند</p>
+</div>
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/guide/plugins).
+## <div align="right">پلاگین vuetify</div>
+<div align="right">
+<p>ست کردن تم دارک برای کل اپلیکیشن و همچنین راست چین کردن صفحات</p>
+<p>برای اینکه فایل ناکست کانفیگ شلوغ نشه میتونیم این پلاگین رو ایجاد کنیم و تمام تغییرات کانفیگ ویوتی فای رو اینجا مشخص کنیم</p>
+</div>
