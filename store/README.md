@@ -1,10 +1,22 @@
-# STORE
+<p align="center">STORE</p>
 
-**This directory is not required, you can delete it if you don't want to use it.**
+## <div align="right">فروشگاه نه. مدیریت حافظه ها !!</div>
+<div align="right">
+<p>بسیار قابل اهمیت و توانمندی شدید در کنترل پروژه دارد</p>
+<p>سعی کردیم تمام اطلاعات که باید از سرور بیاد را اینجا مدیریت کنیم . در صفحات این متدها فراخانی می شوند و ما اطلاعات رو داخل حافظه ها قرار میدهیم و صفحات دوباره این اطلاعات رو چاپ میکنند</p>
+</div>
 
-This directory contains your Vuex Store files.
-Vuex Store option is implemented in the Nuxt.js framework.
+## <div align="right">ماژول ارلت</div>
+<p align="right">تمام اکسیوس ها کامیت میزنن به الرت و پیام سرور رو در الرت قرار می دهند</p>
 
-Creating a file in this directory automatically activates the option in the framework.
+## <div align="right">ماژول احراز هویت</div>
+<p align="right">در زمان لاگین توکن را در لوکال استورج ست میکند و در لایوت دیفالت هنگام رفرش لوکال استورج چک میشود اگر توکن نباشد ابتدا  لاگوت میکند و شما را به صفحه لاگین راهنمایی میکند</p>
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/guide/vuex-store).
+## <div align="right">ماژول نوبار</div>
+<p align="right">با جابجایی بین صفحات اطلاعات هر صفح را در هدر سایت چاپ می کند</p>
+
+## <div align="right">ماژول تم</div>
+<p align="right">تم هم از لوکال استورج چک می شود که با ست کردن تم و رفرش کردن تم ثابت باشد</p>
+
+## <div align="right">اقدام بعدی</div>
+<p align="right">اتفاقا شاید ما این حافظه گرفتن ها رو حذف کنیم چون ما تغییرات کراد رو در سیستم داریم پس با هر درخاست باید اطلاعات دوباره فچ شوند و توجیح گرفتن حافظه رو ندارد فعلا صرفا جهت تمیزی کد این کا رو کردیم</p>
