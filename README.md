@@ -10,7 +10,7 @@
 <hr>
 
 <p align="center"> -= پنل ادمین با لاراول و ناکست جی اس و ویوتی فای =- 
-<img src="static/images/demo.png" height="669"  alt="admin-panel">
+<img src="static/images/demo.png" height="400"  alt="admin-panel">
 </p>
 
 
