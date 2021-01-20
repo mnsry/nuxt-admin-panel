@@ -9,7 +9,15 @@
 
 <hr>
 
-<p align="center">-= پنل ادمین با لاراول و ناکست جی اس و ویوتی فای =-</p>
+<div align="center">
+ <p> -= پنل ادمین با لاراول و ناکست جی اس و ویوتی فای =- </p>
+ <br>
+ <p>نسخه دسکتاپ</p>
+ <p><img src="static/images/demo.png" height="400"  alt="admin-panel"></p>
+ <br>
+ <p>نسخه موبایل</p>
+ <p><img src="static/images/demo-mobile.png" height="400"  alt="admin-panel"></p>
+</div>
 
 ## <div align="right">راهنمای نصب</div>
 
