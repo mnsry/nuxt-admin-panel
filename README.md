@@ -9,8 +9,9 @@
 
 <hr>
 
-<p align="center">-= پنل ادمین با لاراول و ناکست جی اس و ویوتی فای =-</p>
-<img align="center" src="static/images/demo.png" width="400"  alt="admin-panel">
+<p align="center"> -= پنل ادمین با لاراول و ناکست جی اس و ویوتی فای =- 
+<img src="static/images/demo.png" height="669"  alt="admin-panel">
+</p>
 
 
 ## <div align="right">راهنمای نصب</div>
