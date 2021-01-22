@@ -27,6 +27,18 @@
         <v-col cols="6" class="d-flex justify-center">
           <v-col>
             <v-btn
+              v-if="error.statusCode === 403"
+              block
+              outlined
+              depressed
+              color="indigo lighten-2"
+              @click="$store.dispatch('auth/logout')"
+            >
+              <span> خروج </span>
+            </v-btn>
+
+            <v-btn
+              v-else
               block
               outlined
               depressed
@@ -36,6 +48,7 @@
               <span> برگشت </span>
             </v-btn>
           </v-col>
+
           <v-col>
             <v-btn
               block
