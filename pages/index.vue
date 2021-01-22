@@ -1,5 +1,5 @@
 <template>
-  <v-row class="app_center">
+  <v-row class="app_center mt-10">
     <v-col>
       <img src="@/assets/images/logo/help.png" alt="Mansory" />
     </v-col>
