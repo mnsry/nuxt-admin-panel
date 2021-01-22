@@ -1,7 +1,7 @@
 <template>
   <v-row class="app_center">
     <v-col>
-      <img src="@/assets/images/logo/mansory.png" alt="Mansory" />
+      <img src="@/assets/images/logo/help.png" alt="Mansory" />
     </v-col>
   </v-row>
 </template>
