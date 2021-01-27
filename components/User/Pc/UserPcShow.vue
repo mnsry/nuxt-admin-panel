@@ -27,6 +27,15 @@
         <v-btn :to="{ name: `user-id-delete` }" color="red" text outlined>
           حذف کاربر
         </v-btn>
+
+        <v-btn
+          class="float-left"
+          :to="{ name: `user-id-message` }"
+          color="blue"
+          outlined
+        >
+          ارسال پیام
+        </v-btn>
       </v-col>
     </v-row>
 
