@@ -48,7 +48,9 @@ export const actions = {
           },
         }
       )
-      .then(() => location.reload())
+      .then((res) =>
+        commit('alert/setAlert', [res.message, 'success'], { root: true })
+      )
   },
   async deleteMessage({ commit }, id) {
     await this.$axios
@@ -59,9 +61,6 @@ export const actions = {
       })
       .then((res) => {
         commit('alert/setAlert', [res.message, 'success'], { root: true })
-        setTimeout(() => {
-          location.reload()
-        }, 500)
       })
   },
 }
