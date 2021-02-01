@@ -21,7 +21,7 @@
         justify="center"
       >
         <v-col cols="12" class="subtitle-1 text-center">
-          متاسفانه مشکلی پیش آمده!
+          <P>متاسفانه مشکلی پیش آمده!</P>
         </v-col>
 
         <v-col cols="11">
@@ -42,9 +42,9 @@
       </v-row>
 
       <v-row v-else>
-        <message-pc-index v-if="!mobile" />
+        <user-pc-send-message v-if="!mobile" />
 
-        <message-mobile-index v-if="mobile" />
+        <user-mobile-send-message v-if="mobile" />
       </v-row>
     </v-container>
   </v-main>
@@ -53,10 +53,10 @@
 <script>
 export default {
   async fetch() {
-    await this.$store.dispatch('message/getMessages')
+    await this.$store.dispatch('message/getMessage', this.$route.params.id)
   },
   head: {
-    titleTemplate: '%s | پیام ها',
+    titleTemplate: '%s | کاربر: ارسال پیام',
   },
   computed: {
     mobile() {
@@ -64,7 +64,7 @@ export default {
     },
   },
   mounted() {
-    this.$store.commit('navbar/updateNav', 'صندوق پیام')
+    this.$store.commit('navbar/updateNav', 'کاربران | ارسال پیام')
   },
   fetchOnServer: false,
 }
