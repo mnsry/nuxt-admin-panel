@@ -20,10 +20,11 @@
       <v-col cols="12">
         <v-data-table
           style="background-color: rgba(0, 0, 0, 0)"
+          mobile-breakpoint="50"
           :footer-props="footer"
           :headers="headersMap"
           :search="search"
-          :items="messages"
+          :items="message"
           sort-by="id"
         >
           <template #top>
@@ -48,14 +49,14 @@
             <v-list-item>
               <v-list-item-avatar>
                 <v-img
-                  :src="item.to_user_info.avatar"
-                  :alt="item.to_user_info.name"
+                  :src="item.auth_user.avatar"
+                  :alt="item.auth_user.name"
                 ></v-img>
               </v-list-item-avatar>
 
               <v-list-item-content>
                 <v-list-item-title
-                  v-text="item.to_user_info.name"
+                  v-text="item.auth_user.name"
                 ></v-list-item-title>
               </v-list-item-content>
             </v-list-item>
@@ -63,12 +64,12 @@
 
           <template #[`item.actions`]="{ item }">
             <v-btn
-              :to="{ path: `/user/${item.to_user_info.id}/message` }"
+              :to="{ path: `/message/${item.to_user_info.id}/delete` }"
               fab
               x-small
-              color="success"
+              color="red"
             >
-              <v-icon>mdi-message</v-icon>
+              <v-icon>mdi-delete</v-icon>
             </v-btn>
           </template>
 
@@ -86,40 +87,77 @@
         </v-data-table>
       </v-col>
     </v-row>
+
+    <v-row>
+      <v-col cols="12">
+        <v-card color="rgba(0,0,0,0.1)" rounded>
+          <v-card-text>
+            <v-form
+              ref="form"
+              v-model="formDisable"
+              lazy-validation
+              class="mt-5"
+            >
+              <v-text-field
+                v-model="name"
+                label="پیام "
+                :rules="[rules.nameRequired, rules.nameMin]"
+                counter
+              />
+              <br />
+
+              <v-btn
+                color="primary"
+                :disabled="!formDisable"
+                class="ml-4"
+                outlined
+                @click.stop="createMessage"
+              >
+                ارسال پیام
+              </v-btn>
+            </v-form>
+          </v-card-text>
+        </v-card>
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 
 <script>
 export default {
-  data() {
-    return {
-      search: '',
-      footer: {
-        itemsPerPageAllText: 'همه',
-        itemsPerPageText: 'صفحه بندی',
+  data: () => ({
+    search: '',
+    footer: {
+      itemsPerPageAllText: 'همه',
+      itemsPerPageText: 'صفحه بندی',
+    },
+    headers: [],
+    headersMap: [
+      {
+        text: 'کاربر',
+        value: 'to_user_info',
+        align: 'start',
+        sortable: false,
       },
-      headers: [],
-      headersMap: [
-        {
-          text: 'کاربر',
-          value: 'to_user_info',
-          align: 'start',
-          sortable: false,
-        },
-        {
-          text: 'پیام',
-          value: 'message',
-          align: 'start',
-        },
-        {
-          text: 'بیشتر',
-          value: 'actions',
-          align: 'end',
-          sortable: false,
-        },
-      ],
-    }
-  },
+      {
+        text: 'پیام',
+        value: 'message',
+        align: 'start',
+      },
+      {
+        text: 'بیشتر',
+        value: 'actions',
+        align: 'end',
+        sortable: false,
+      },
+    ],
+    name: '',
+    formDisable: true,
+    rules: {
+      nameRequired: (v) => !!v || 'وارد کردن پیام اجباری است!',
+      nameMin: (v) => (v && v.length >= 3) || 'حداقل 3 کاراکتر...',
+    },
+  }),
   computed: {
     alert() {
       return this.$store.state.alert.alert
@@ -127,8 +165,18 @@ export default {
     alertStatus() {
       return this.$store.state.alert.alertStatus
     },
-    messages() {
-      return this.$store.state.message.messages
+    message() {
+      return this.$store.state.message.message
+    },
+  },
+  methods: {
+    createMessage() {
+      if (this.$refs.form.validate()) {
+        this.$store.dispatch('message/createMessage', [
+          this.$route.params.id,
+          this.name,
+        ])
+      }
     },
   },
 }

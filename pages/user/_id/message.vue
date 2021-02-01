@@ -1,37 +1,50 @@
 <template>
   <v-main>
     <v-container fluid>
-      <v-row>
-        <v-col cols="12">
-          <v-card color="rgba(0,0,0,0.3)" rounded>
-            <v-card-text>
-              <v-form
-                ref="form"
-                v-model="formDisable"
-                lazy-validation
-                class="mt-5"
-              >
-                <v-text-field
-                  v-model="name"
-                  label="پیام "
-                  :rules="[rules.nameRequired, rules.nameMin]"
-                  counter
-                />
-                <br />
-
-                <v-btn
-                  color="primary"
-                  :disabled="!formDisable"
-                  class="ml-4"
-                  outlined
-                  @click.stop="createMessage"
-                >
-                  ارسال پیام
-                </v-btn>
-              </v-form>
-            </v-card-text>
-          </v-card>
+      <v-row v-if="$fetchState.pending" align-content="center" justify="center">
+        <v-col cols="12" class="subtitle-1 text-center">
+          درحال دریافت اطلاعات ...
         </v-col>
+
+        <v-col cols="11">
+          <v-progress-linear
+            indeterminate
+            rounded
+            color="blue"
+          ></v-progress-linear>
+        </v-col>
+      </v-row>
+
+      <v-row
+        v-else-if="$fetchState.error"
+        align-content="center"
+        justify="center"
+      >
+        <v-col cols="12" class="subtitle-1 text-center">
+          <P>متاسفانه مشکلی پیش آمده!</P>
+        </v-col>
+
+        <v-col cols="11">
+          <v-progress-linear
+            color="red lighten-2"
+            buffer-value="25"
+            reverse
+            stream
+          ></v-progress-linear>
+        </v-col>
+
+        <v-col cols="11">
+          <v-btn outlined depressed color="red lighten-2" block @click="$fetch">
+            تلاش مجدد
+            <v-icon right dark> mdi-refresh </v-icon>
+          </v-btn>
+        </v-col>
+      </v-row>
+
+      <v-row v-else>
+        <user-pc-send-message v-if="!mobile" />
+
+        <user-mobile-send-message v-if="mobile" />
       </v-row>
     </v-container>
   </v-main>
@@ -39,14 +52,9 @@
 
 <script>
 export default {
-  data: () => ({
-    name: '',
-    formDisable: true,
-    rules: {
-      nameRequired: (v) => !!v || 'وارد کردن پیام اجباری است!',
-      nameMin: (v) => (v && v.length >= 3) || 'حداقل 3 کاراکتر...',
-    },
-  }),
+  async fetch() {
+    await this.$store.dispatch('message/getMessage', this.$route.params.id)
+  },
   head: {
     titleTemplate: '%s | کاربر: ارسال پیام',
   },
@@ -58,15 +66,6 @@ export default {
   mounted() {
     this.$store.commit('navbar/updateNav', 'کاربران | ارسال پیام')
   },
-  methods: {
-    createMessage() {
-      if (this.$refs.form.validate()) {
-        this.$store.dispatch('message/createMessage', [
-          this.$route.params.id,
-          this.name,
-        ])
-      }
-    },
-  },
+  fetchOnServer: false,
 }
 </script>

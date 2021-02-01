@@ -53,7 +53,7 @@
 <script>
 export default {
   async fetch() {
-    await this.$store.dispatch('message/getMessage')
+    await this.$store.dispatch('message/getMessages')
   },
   head: {
     titleTemplate: '%s | پیام ها',
